@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soil Data</title>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <h1>Soil Data</h1>
+        {% for item in soildata %}
+        <div class="section">
+            <div>ID</div>
+            {{ item.id }}
+            <div>Ec</div>
+            {{ item.ec }}
+            <div>PH</div>
+            {{ item.ph }}
+            <div>type</div>
+            {{ item.type }}
+        </div>
+        {% endfor %}
+    <a href="{% url 'form_view' %}">Add New Soil Data</a>
+</body>
+</html>
+

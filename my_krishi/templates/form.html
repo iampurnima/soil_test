@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Soil Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Add Soil Data</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="ph">PH</label>
+                {{ form.ph }}
+            </div>
+            <div class="form-group">
+                <label for="ec">EC</label>
+                {{ form.ec }}
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="sandy">Sandy</option>
+                    <option value="clay">Clay</option>
+                    <option value="silt">Silt</option>
+                    <option value="loam">Loam</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'soildata_view' %}">Back to Soil Data List</a>
+</body>
+</html>
+
+
